@@ -13,16 +13,14 @@ CAMPOS_CSV = ["participante", "data", "origem", "pergunta", "id_orientacao", "en
 
 
 def pedir_opcao(texto, minimo, maximo):
-    """Pede um número até a pessoa digitar um valor válido."""
     while True:
         valor = input(texto).strip()
-        if valor.isdigit() and minimo <= int(valor) <= maximo:
+        if valor.isdecimal() and minimo <= int(valor) <= maximo:
             return int(valor)
         print(f"Opção inválida. Digite um número de {minimo} a {maximo}.")
 
 
 def pedir_sim_ou_nao(texto):
-    """Pede s ou n até a resposta ser válida. Devolve True para 's'."""
     while True:
         valor = input(texto).strip().lower()
         if valor in ("s", "n"):
@@ -31,8 +29,6 @@ def pedir_sim_ou_nao(texto):
 
 
 class Assistente:
-    """Quem conversa com o cidadão: atende, guarda o histórico e calcula indicadores."""
-
     def __init__(self, nome, base, caminho_historico="data/historico.json",
                  caminho_csv="data/atendimentos.csv"):
         self.nome = nome
@@ -68,7 +64,6 @@ class Assistente:
 
     def registrar(self, origem, pergunta, id_orientacao, encontrou, ajudou,
                   tentativas, tempo):
-        # Guarda um atendimento no histórico (e no arquivo JSON)
         atendimento = {
             "participante": self.participante,
             "data": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -87,7 +82,6 @@ class Assistente:
 
     # ---------- regras ----------
     def contem_dado_sensivel(self, texto):
-        """8 ou mais dígitos, ou um @, indica CPF, telefone ou e-mail."""
         digitos = sum(1 for letra in texto if letra.isdigit())
         return digitos >= 8 or "@" in texto
 
@@ -232,7 +226,7 @@ class Assistente:
         sessoes = {a.get("sessao") for a in self.historico}
         print(f"Sessões de uso (pessoas): {len(sessoes)}")
 
-        # Uma nota por sessão (todos os atendimentos da sessão guardam a mesma)
+        # uma nota por sessão (todos os atendimentos da sessão guardam a mesma)
         notas = {}
         for a in self.historico:
             if a.get("nota_facilidade") is not None:
@@ -280,6 +274,6 @@ class Assistente:
         except OSError:
             print("Aviso: não foi possível exportar o CSV.")
     def proximo_participante(self):
-        # Identificador anonimo da sessão
+        # Código anônimo da sessão
         sessoes = {a.get("sessao") for a in self.historico}
         return f"P{len(sessoes) + 1:02d}"
