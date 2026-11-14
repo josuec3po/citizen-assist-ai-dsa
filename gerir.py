@@ -210,3 +210,40 @@ def excluir(base):
     base.excluir(identificador)
     salvar_ou_avisar(base)
     print(f"Orientação {identificador} excluída. Total na base: {len(base)}.")
+
+def listar_ordenado(base):
+    print("\n--- Listar orientações ordenadas ---")
+    if len(base) == 0:
+        print(MSG_LISTA_VAZIA)
+        return
+    print("Ordenar por:")
+    print("  1. ID")
+    print("  2. Título")
+    print("  3. Categoria")
+    print("  0. Voltar")
+    criterio = pedir_opcao("Escolha: ", 0, 3)
+    if criterio == 0:
+        return
+    print("  1. Crescente")
+    print("  2. Decrescente")
+    sentido = pedir_opcao("Sentido: ", 1, 2)
+
+    base.ordenar(["id", "titulo", "categoria"][criterio - 1], reverso=(sentido == 2))
+    print(f"\n{'ID':>3} | {'Categoria':<22} | Título")
+    print("-" * 70)
+    for o in base.orientacoes:  # percurso da lista encadeada
+        print(f"{o.id:>3} | {o.categoria:<22} | {o.titulo}")
+
+def analise(base):
+    print("\n--- Análise da base ---")
+    resumo = base.analise()
+    if resumo["total"] == 0:
+        print(MSG_LISTA_VAZIA)
+        return
+    print(f"Total de orientações: {resumo['total']}")
+    print("Orientações por categoria:")
+    for categoria, quantidade in resumo["por_categoria"]:
+        porcentagem = quantidade / resumo["total"] * 100
+        print(f"  {categoria:<24} {quantidade:>2}  ({porcentagem:.0f}%)")
+    print(f"Média de palavras-chave por orientação: {resumo['media_palavras_chave']:.1f}")
+    print(f"Verificação mais antiga: {resumo['verificacao_mais_antiga']}")
