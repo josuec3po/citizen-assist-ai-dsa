@@ -77,3 +77,136 @@ def hoje():
 def salvar_ou_avisar(base):
     if not base.salvar():
         print("Aviso: a alteração vale nesta execução, mas não foi possível gravar o arquivo.")
+
+# ---------- operações ----------
+def cadastrar(base):
+    print("\n--- Cadastrar orientação (ID 0 cancela) ---")
+    sugestao = base.proximo_id()
+    while True:
+        novo_id = pedir_id(f"ID (sugestão: {sugestao}): ")
+        if novo_id is None:
+            print("Cadastro cancelado.")
+            return
+        if base.buscar_por_id(novo_id) is not None:
+            print(f"Já existe uma orientação com o ID {novo_id}. Escolha outro.")
+            continue
+        break
+
+    categoria = pedir_categoria(base)
+    titulo = pedir_texto("Título: ")
+    palavras = pedir_palavras_chave()
+    resposta = pedir_texto("Resposta ao cidadão: ")
+    documentos = pedir_documentos()
+    onde = pedir_texto("Onde procurar: ")
+    fonte = pedir_url("Fonte (link oficial): ")
+
+    orientacao = Orientacao(novo_id, categoria, titulo, palavras, resposta,
+                            documentos, onde, fonte, hoje())
+    if base.cadastrar(orientacao):
+        salvar_ou_avisar(base)
+        print(f"\nOrientação {novo_id} cadastrada. Total na base: {len(base)}.")
+    else:
+        print("Não foi possível cadastrar (ID repetido ou inválido).")
+
+
+def consultar_id(base):
+    print("\n--- Consultar por ID ---")
+    if len(base) == 0:
+        print(MSG_LISTA_VAZIA)
+        return
+    identificador = pedir_id("ID da orientação (0 cancela): ")
+    if identificador is None:
+        return
+    orientacao = base.buscar_por_id(identificador)
+    if orientacao is None:
+        print(f"Nenhuma orientação com o ID {identificador}.")
+    else:
+        orientacao.exibir()
+
+
+def pesquisar(base):
+    print("\n--- Pesquisar ---")
+    if len(base) == 0:
+        print(MSG_LISTA_VAZIA)
+        return
+    print("1. Por título")
+    print("2. Por categoria")
+    print("0. Voltar")
+    opcao = pedir_opcao("Escolha: ", 0, 2)
+    if opcao == 0:
+        return
+    termo = pedir_texto("Termo de busca: ")
+    if opcao == 1:
+        achados = base.pesquisar_por_titulo(termo)
+    else:
+        achados = base.pesquisar_por_categoria(termo)
+    if not achados:
+        print(f"Nenhuma orientação encontrada para '{termo}'.")
+        return
+    print(f"\n{len(achados)} orientação(ões) encontrada(s):")
+    for o in achados:
+        print(f"  {o.id:>3} | {o.categoria} | {o.titulo}")
+
+
+def atualizar(base):
+    print("\n--- Atualizar orientação ---")
+    if len(base) == 0:
+        print(MSG_LISTA_VAZIA)
+        return
+    identificador = pedir_id("ID da orientação (0 cancela): ")
+    if identificador is None:
+        return
+    orientacao = base.buscar_por_id(identificador)
+    if orientacao is None:
+        print(f"Nenhuma orientação com o ID {identificador}.")
+        return
+
+    orientacao.exibir()
+    print("\nQual campo deseja alterar?")
+    campos = ["categoria", "titulo", "palavras_chave", "resposta",
+              "documentos", "onde", "fonte"]
+    rotulos = ["Categoria", "Título", "Palavras-chave", "Resposta",
+               "Documentos", "Onde procurar", "Fonte"]
+    for i, rotulo in enumerate(rotulos, start=1):
+        print(f"  {i}. {rotulo}")
+    print("  0. Cancelar")
+    escolha = pedir_opcao("Escolha: ", 0, len(campos))
+    if escolha == 0:
+        return
+
+    campo = campos[escolha - 1]
+    if campo == "categoria":
+        valor = pedir_categoria(base)
+    elif campo == "palavras_chave":
+        valor = pedir_palavras_chave()
+    elif campo == "documentos":
+        valor = pedir_documentos()
+    elif campo == "fonte":
+        valor = pedir_url("Nova fonte (link oficial): ")
+    else:
+        valor = pedir_texto(f"Novo valor para {rotulos[escolha - 1]}: ")
+
+    base.atualizar(identificador, **{campo: valor, "verificado_em": hoje()})
+    salvar_ou_avisar(base)
+    print(f"\nOrientação {identificador} atualizada.")
+
+
+def excluir(base):
+    print("\n--- Excluir orientação ---")
+    if len(base) == 0:
+        print(MSG_LISTA_VAZIA)
+        return
+    identificador = pedir_id("ID da orientação (0 cancela): ")
+    if identificador is None:
+        return
+    orientacao = base.buscar_por_id(identificador)
+    if orientacao is None:
+        print(f"Nenhuma orientação com o ID {identificador}.")
+        return
+    print(f"Orientação encontrada: {orientacao.titulo} [{orientacao.categoria}]")
+    if not pedir_sim_ou_nao("Tem certeza que deseja excluir? (s/n): "):
+        print("Exclusão cancelada.")
+        return
+    base.excluir(identificador)
+    salvar_ou_avisar(base)
+    print(f"Orientação {identificador} excluída. Total na base: {len(base)}.")
