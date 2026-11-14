@@ -44,31 +44,31 @@ class ListaEncadeada:
             atual = atual.proximo
 
     # ---------- busca ----------
-    def buscar(self, predicado):
+    def buscar(self, atributo):
         # Busca linear: devolve o primeiro dado para qual a condição é verdadeira, ou None se não houver. O(n)
         atual = self.comeco
         while atual is not None:
-            if predicado(atual.dado):
+            if atributo(atual.dado):
                 return atual.dado
             atual = atual.proximo
         return None
 
-    def buscar_todos(self, predicado):
+    def buscar_todos(self, atributo):
         # Devolve uma lista Python com todos os dados que satisfazem a condição
-        return [dado for dado in self if predicado(dado)]
+        return [dado for dado in self if atributo(dado)]
 
     # ---------- remoção ----------
-    def remover(self, predicado):
+    def remover(self, atributo):
         # Remove o primeiro nó que satisfaz a condição.
         anterior = None
         atual = self.comeco
         while atual is not None:
-            if predicado(atual.dado):
-                if anterior is None:          # removendo a cabeça
+            if atributo(atual.dado):
+                if anterior is None:         
                     self.comeco = atual.proximo
-                else:                         # removendo no meio ou no fim
+                else:                        
                     anterior.proximo = atual.proximo
-                if atual is self.final:       # removendo o último nó
+                if atual is self.final:      
                     self.final = anterior
                 self._tamanho -= 1
                 return True

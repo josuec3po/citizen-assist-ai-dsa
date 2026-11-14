@@ -33,6 +33,9 @@ class BaseConhecimento:
         self.caminho = caminho
         self.orientacoes = []  # lista de objetos Orientacao 
 
+    def __len__(self):
+        return len(self.orientacoes)
+
     def carregar(self):
         # Le o JSON e cria os objetos de Orientacao.
         try:
