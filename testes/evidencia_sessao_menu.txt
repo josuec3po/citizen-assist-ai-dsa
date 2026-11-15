@@ -1,0 +1,206 @@
+==================================================
+ Citizen Assist AI: orientação para pessoas idosas
+==================================================
+Este assistente NÃO é um canal oficial e não pede nome, CPF,
+telefone ou e-mail. Não digite dados pessoais.
+
+--- Menu principal ---
+ 1. Fazer uma pergunta
+ 2. Navegar por categorias
+ 3. Consultar orientação por ID
+ 4. Pesquisar (título ou categoria)
+ 5. Cadastrar orientação
+ 6. Atualizar orientação
+ 7. Excluir orientação
+ 8. Listar orientações ordenadas
+ 9. Análise da base
+10. Ver indicadores de uso
+11. Exportar atendimentos (CSV)
+ 0. Sair
+Escolha uma opção: 
+Digite sua dúvida (0 para voltar): 
+Confiança da resposta: MÉDIA (4 pontos)
+
+>> Transporte coletivo urbano gratuito  [Transporte]
+O Estatuto da Pessoa Idosa garante transporte coletivo urbano e semiurbano gratuito a partir dos 65 anos. Cada cidade pode ter regras próprias, inclusive sobre idade e cadastro ou cartão. Confirme na prefeitura ou na empresa de ônibus da sua cidade.
+Documentos necessários:
+  - Documento oficial com foto que comprove a idade
+Onde: Empresa de ônibus ou prefeitura da sua cidade
+Fonte: https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm (verificado em 2026-11-07)
+Aviso: este assistente NÃO é um canal oficial.
+
+Outras orientações que podem ajudar:
+  - Passagem de ônibus gratuita ou com desconto entre estados
+
+Essa orientação respondeu sua dúvida? (s/n): 
+Digite sua dúvida (0 para voltar): 
+--- Menu principal ---
+ 1. Fazer uma pergunta
+ 2. Navegar por categorias
+ 3. Consultar orientação por ID
+ 4. Pesquisar (título ou categoria)
+ 5. Cadastrar orientação
+ 6. Atualizar orientação
+ 7. Excluir orientação
+ 8. Listar orientações ordenadas
+ 9. Análise da base
+10. Ver indicadores de uso
+11. Exportar atendimentos (CSV)
+ 0. Sair
+Escolha uma opção: 
+--- Consultar por ID ---
+ID da orientação (0 cancela): 
+>> Golpes contra aposentados: ligações, mensagens e falsos atendentes  [Segurança e Golpes]
+O INSS nunca pede senha, documentos, fotos, dinheiro ou dados por telefone, mensagem ou visita. Se alguém pedir, é golpe: desligue, não clique em links e não envie nada. Para confirmar, use o Meu INSS ou o telefone 135. Avisos verdadeiros chegam pelo aplicativo Meu INSS, pela caixa postal do gov.br ou pelo WhatsApp do Governo do Brasil com selo azul de conta verificada.
+Documentos necessários:
+  - Nenhum documento é necessário
+Onde: Meu INSS (meu.inss.gov.br), site gov.br/inss ou telefone 135
+Fonte: https://www.gov.br/inss (verificado em 2026-11-07)
+Aviso: este assistente NÃO é um canal oficial.
+
+--- Menu principal ---
+ 1. Fazer uma pergunta
+ 2. Navegar por categorias
+ 3. Consultar orientação por ID
+ 4. Pesquisar (título ou categoria)
+ 5. Cadastrar orientação
+ 6. Atualizar orientação
+ 7. Excluir orientação
+ 8. Listar orientações ordenadas
+ 9. Análise da base
+10. Ver indicadores de uso
+11. Exportar atendimentos (CSV)
+ 0. Sair
+Escolha uma opção: 
+--- Pesquisar ---
+1. Por título
+2. Por categoria
+0. Voltar
+Escolha: Termo de busca: 
+2 orientação(ões) encontrada(s):
+    5 | Transporte | Transporte coletivo urbano gratuito
+    6 | Transporte | Passagem de ônibus gratuita ou com desconto entre estados
+
+--- Menu principal ---
+ 1. Fazer uma pergunta
+ 2. Navegar por categorias
+ 3. Consultar orientação por ID
+ 4. Pesquisar (título ou categoria)
+ 5. Cadastrar orientação
+ 6. Atualizar orientação
+ 7. Excluir orientação
+ 8. Listar orientações ordenadas
+ 9. Análise da base
+10. Ver indicadores de uso
+11. Exportar atendimentos (CSV)
+ 0. Sair
+Escolha uma opção: 
+--- Cadastrar orientação (ID 0 cancela) ---
+ID (sugestão: 13): Categorias existentes:
+  1. Saúde
+  2. Direitos e Benefícios
+  3. Transporte
+  4. Segurança e Golpes
+  5. Criar nova categoria
+Escolha a categoria: Título: Palavras-chave separadas por vírgula: Resposta ao cidadão: Documento 1 (Enter vazio para terminar): Documento 2 (Enter vazio para terminar): Onde procurar: Fonte (link oficial): 
+Orientação 50 cadastrada. Total na base: 13.
+
+--- Menu principal ---
+ 1. Fazer uma pergunta
+ 2. Navegar por categorias
+ 3. Consultar orientação por ID
+ 4. Pesquisar (título ou categoria)
+ 5. Cadastrar orientação
+ 6. Atualizar orientação
+ 7. Excluir orientação
+ 8. Listar orientações ordenadas
+ 9. Análise da base
+10. Ver indicadores de uso
+11. Exportar atendimentos (CSV)
+ 0. Sair
+Escolha uma opção: 
+--- Listar orientações ordenadas ---
+Ordenar por:
+  1. ID
+  2. Título
+  3. Categoria
+  0. Voltar
+Escolha:   1. Crescente
+  2. Decrescente
+Sentido: 
+ ID | Categoria              | Título
+----------------------------------------------------------------------
+  4 | Direitos e Benefícios  | Atendimento prioritário para pessoas idosas
+  9 | Direitos e Benefícios  | BPC: benefício assistencial para idosos de baixa renda
+  1 | Saúde                  | Consultar ou tirar o Cartão Nacional de Saúde (Cartão SUS)
+ 10 | Direitos e Benefícios  | Denunciar violência ou maus-tratos contra pessoa idosa
+ 11 | Segurança e Golpes     | Descontos indevidos na aposentadoria ou pensão
+ 12 | Segurança e Golpes     | Golpes contra aposentados: ligações, mensagens e falsos atendentes
+ 50 | Saúde                  | Orientação de teste
+  6 | Transporte             | Passagem de ônibus gratuita ou com desconto entre estados
+  7 | Direitos e Benefícios  | Pedir aposentadoria por idade
+  8 | Direitos e Benefícios  | Prova de vida do INSS
+  3 | Saúde                  | Remédios e fraldas pelo Farmácia Popular
+  5 | Transporte             | Transporte coletivo urbano gratuito
+  2 | Saúde                  | Vacinas para quem tem 60 anos ou mais
+
+--- Menu principal ---
+ 1. Fazer uma pergunta
+ 2. Navegar por categorias
+ 3. Consultar orientação por ID
+ 4. Pesquisar (título ou categoria)
+ 5. Cadastrar orientação
+ 6. Atualizar orientação
+ 7. Excluir orientação
+ 8. Listar orientações ordenadas
+ 9. Análise da base
+10. Ver indicadores de uso
+11. Exportar atendimentos (CSV)
+ 0. Sair
+Escolha uma opção: 
+--- Excluir orientação ---
+ID da orientação (0 cancela): Orientação encontrada: Orientação de teste [Saúde]
+Tem certeza que deseja excluir? (s/n): Orientação 50 excluída. Total na base: 12.
+
+--- Menu principal ---
+ 1. Fazer uma pergunta
+ 2. Navegar por categorias
+ 3. Consultar orientação por ID
+ 4. Pesquisar (título ou categoria)
+ 5. Cadastrar orientação
+ 6. Atualizar orientação
+ 7. Excluir orientação
+ 8. Listar orientações ordenadas
+ 9. Análise da base
+10. Ver indicadores de uso
+11. Exportar atendimentos (CSV)
+ 0. Sair
+Escolha uma opção: 
+--- Análise da base ---
+Total de orientações: 12
+Orientações por categoria:
+  Direitos e Benefícios     5  (42%)
+  Saúde                     3  (25%)
+  Segurança e Golpes        2  (17%)
+  Transporte                2  (17%)
+Média de palavras-chave por orientação: 9.8
+Verificação mais antiga: 2026-11-07
+
+--- Menu principal ---
+ 1. Fazer uma pergunta
+ 2. Navegar por categorias
+ 3. Consultar orientação por ID
+ 4. Pesquisar (título ou categoria)
+ 5. Cadastrar orientação
+ 6. Atualizar orientação
+ 7. Excluir orientação
+ 8. Listar orientações ordenadas
+ 9. Análise da base
+10. Ver indicadores de uso
+11. Exportar atendimentos (CSV)
+ 0. Sair
+Escolha uma opção: 
+De 1 a 5, quão fácil foi usar o assistente? 
+Atendimentos exportados para data/atendimentos.csv
+
+Obrigado por usar o assistente. Até logo!

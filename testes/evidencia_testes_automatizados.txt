@@ -1,0 +1,51 @@
+PRINT DO TERMINAL AO EXECUTAR AO RODAR O test_dsa.py VERSAO COMPLETA ==============================================================
+
+test_analise (testes.test_dsa.TestBase.test_analise) ... ok
+test_atualizar (testes.test_dsa.TestBase.test_atualizar) ... ok
+test_busca_por_pontuacao (testes.test_dsa.TestBase.test_busca_por_pontuacao) ... ok
+test_cadastrar_e_id_duplicado (testes.test_dsa.TestBase.test_cadastrar_e_id_duplicado) ... ok
+test_carregar_arquivo_inexistente_ou_corrompido (testes.test_dsa.TestBase.test_carregar_arquivo_inexistente_ou_corrompido) ... ok
+test_carregar_ignora_registro_incompleto_e_id_repetido (testes.test_dsa.TestBase.test_carregar_ignora_registro_incompleto_e_id_repetido) ... ok
+test_consulta_por_id (testes.test_dsa.TestBase.test_consulta_por_id) ... ok
+test_excluir (testes.test_dsa.TestBase.test_excluir) ... ok
+test_id_invalido (testes.test_dsa.TestBase.test_id_invalido) ... ok
+test_lista_vazia_operacoes (testes.test_dsa.TestBase.test_lista_vazia_operacoes) ... ok
+test_ordenar_por_criterios (testes.test_dsa.TestBase.test_ordenar_por_criterios) ... ok
+test_persistencia_salvar_e_recarregar (testes.test_dsa.TestBase.test_persistencia_salvar_e_recarregar) ... ok
+test_pesquisa_titulo_categoria_e_sem_resultado (testes.test_dsa.TestBase.test_pesquisa_titulo_categoria_e_sem_resultado) ... ok
+test_atualizar_pela_interface (testes.test_dsa.TestInterface.test_atualizar_pela_interface) ... ok
+test_cadastrar_cancelado (testes.test_dsa.TestInterface.test_cadastrar_cancelado) ... ok
+test_cadastrar_id_duplicado_e_campos_vazios (testes.test_dsa.TestInterface.test_cadastrar_id_duplicado_e_campos_vazios) ... ok
+test_consulta_inexistente (testes.test_dsa.TestInterface.test_consulta_inexistente) ... ok
+test_excluir_com_confirmacao (testes.test_dsa.TestInterface.test_excluir_com_confirmacao) ... ok
+test_opcao_inexistente_no_menu (testes.test_dsa.TestInterface.test_opcao_inexistente_no_menu) ... ok
+test_operacoes_com_lista_vazia (testes.test_dsa.TestInterface.test_operacoes_com_lista_vazia) ... ok
+test_pedir_id_invalido (testes.test_dsa.TestInterface.test_pedir_id_invalido) ... ok
+test_pesquisa_sem_resultado (testes.test_dsa.TestInterface.test_pesquisa_sem_resultado) ... ok
+test_buscar_e_buscar_todos (testes.test_dsa.TestListaEncadeada.test_buscar_e_buscar_todos) ... ok
+test_inserir_depois_de_remover_cauda (testes.test_dsa.TestListaEncadeada.test_inserir_depois_de_remover_cauda) ... ok
+test_inserir_fim_mantem_ordem (testes.test_dsa.TestListaEncadeada.test_inserir_fim_mantem_ordem) ... ok
+test_inserir_inicio (testes.test_dsa.TestListaEncadeada.test_inserir_inicio) ... ok
+test_lista_vazia (testes.test_dsa.TestListaEncadeada.test_lista_vazia) ... ok
+test_remover_cabeca_meio_cauda_e_unico (testes.test_dsa.TestListaEncadeada.test_remover_cabeca_meio_cauda_e_unico) ... ok
+test_remover_inexistente (testes.test_dsa.TestListaEncadeada.test_remover_inexistente) ... ok
+test_insertion_sort (testes.test_dsa.TestOrdenacao.test_insertion_sort) ... ok
+test_merge_sort_estavel (testes.test_dsa.TestOrdenacao.test_merge_sort_estavel) ... ok
+test_merge_sort_reverso (testes.test_dsa.TestOrdenacao.test_merge_sort_reverso) ... ok
+test_merge_sort_varios (testes.test_dsa.TestOrdenacao.test_merge_sort_varios) ... ok
+test_merge_sort_vazia_e_um_elemento (testes.test_dsa.TestOrdenacao.test_merge_sort_vazia_e_um_elemento) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.007s
+
+OK
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+PRINT DO TERMINAL AO EXECUTAR AO RODAR O test_dsa.py VERSAO SIMPLIFICADA, VERSAO ATUAL =========================================================
+# Em caso de erro em algum teste o output seria algo como "......E...........E...E...........", onde o teste falhou "." vira "E"
+..................................
+----------------------------------------------------------------------
+Ran 34 tests in 0.015s
+
+OK
