@@ -23,3 +23,17 @@ class Orientacao:
         print(f"Onde: {self.onde}")
         print(f"Fonte: {self.fonte} (verificado em {self.verificado_em})")
         print("Aviso: este assistente NÃO é um canal oficial.")
+
+    def para_dict(self):
+    # Converte para dicionário (usado ao salvar no JSON)
+        return {
+            "id": self.id,
+            "categoria": self.categoria,
+            "titulo": self.titulo,
+            "palavras_chave": self.palavras_chave,
+            "resposta": self.resposta,
+            "documentos": self.documentos,
+            "onde": self.onde,
+            "fonte": self.fonte,
+            "verificado_em": self.verificado_em,
+        }
