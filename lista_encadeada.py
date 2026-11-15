@@ -17,7 +17,7 @@ class ListaEncadeada:
 
     # ---------- inserção ----------
     def inserir_inicio(self, dado):
-        """O(1)."""
+        # O(1)
         novo = No(dado)
         novo.proximo = self.comeco
         self.comeco = novo
@@ -26,7 +26,7 @@ class ListaEncadeada:
         self._tamanho += 1
 
     def inserir_fim(self, dado):
-        # O(1), graças ao ponteiro para o final.
+        # O(1) por conta do ponteiro para o final.
         novo = No(dado)
         if self.final is None:
             self.comeco = novo
@@ -37,7 +37,7 @@ class ListaEncadeada:
 
     # ---------- percurso ----------
     def __iter__(self):
-        # Percorre a lista do primeiro ao último nó. O(n).
+        # Percorre a lista do primeiro ao último nó -> O(n)
         atual = self.comeco
         while atual is not None:
             yield atual.dado
@@ -45,7 +45,7 @@ class ListaEncadeada:
 
     # ---------- busca ----------
     def buscar(self, atributo):
-        # Busca linear: devolve o primeiro dado para qual a condição é verdadeira, ou None se não houver. O(n)
+        # Busca linear: devolve o primeiro dado para qual a condição é verdadeira, ou None se não houver -> O(n)
         atual = self.comeco
         while atual is not None:
             if atributo(atual.dado):
@@ -59,7 +59,7 @@ class ListaEncadeada:
 
     # ---------- remoção ----------
     def remover(self, atributo):
-        # Remove o primeiro nó que satisfaz a condição.
+        # Remove o primeiro nó que satisfaz a condição
         anterior = None
         atual = self.comeco
         while atual is not None:
@@ -83,10 +83,10 @@ class ListaEncadeada:
 
     # ---------- ordenação ----------
     def ordenar(self, chave, reverso=False):
-        # Ordena a própria lista com Merge Sort, religando os nós.
+        # Ordena lista com Merge Sort
         # O(n log n)
         self.comeco = merge_sort(self.comeco, chave, reverso)
-        # a final pode ter mudado: reencontra o último nó
+        # a final pode ter mudado -> reencontra o ultimo nó
         atual = self.comeco
         self.final = atual
         while atual is not None:
